@@ -1,0 +1,23 @@
+{
+  "name": "github-classroom-dashboard-ci",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon --ignore 'data/*' --ignore 'node_modules/*' --legacy-watch src/server.js",
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "2.2.0",
+    "cors": "2.8.5",
+    "express": "5.1.0"
+  },
+  "devDependencies": {
+    "chai": "6.2.0",
+    "mocha": "11.7.4",
+    "nodemon": "  3.1.10"
+  }
+}

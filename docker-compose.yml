@@ -1,0 +1,29 @@
+services:
+  web:
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.middlewares.https_redirect.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.https_redirect.redirectscheme.permanent=true"
+      - "traefik.http.services.pweb.loadbalancer.server.port=8080"
+      - "traefik.http.routers.pweb.rule=Host(`pweb.bf0.ch`)"
+      - "traefik.http.routers.pweb.entrypoints=web"
+      - "traefik.http.routers.pweb.middlewares=https_redirect"
+      - "traefik.http.routers.pweb_secured.rule=Host(`pweb.bf0.ch`)"
+      - "traefik.http.routers.pweb_secured.entrypoints=websecure"
+      - "traefik.http.routers.pweb_secured.tls=true"
+      - "traefik.http.routers.pweb_secured.tls.certresolver=myresolver"
+    restart: always
+    build: .
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    volumes:
+      - "./public:/app/public"
+      - "./data:/app/data"
+      - "./testsrc:/app/testsrc"
+      - "./src:/app/src"
+    networks:
+      - web
+networks:
+  web:
+    external: true

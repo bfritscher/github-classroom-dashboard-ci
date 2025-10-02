@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+.error {
+    background-color: #e53935;
+}
+
+.success {
+    background-color: #c8e6c9;
+}
+
+.failure {
+    background-color: #ffcdd2;
+}
+
+body {
+    font-family: 'Source Sans Pro', Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 1em;
+}
+
+li {
+    display: block;
+    margin: 5px;
+    width: 200px;
+    background-color: #E0E0E0;
+    padding: 8px;
+    position: relative;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+li a {
+    text-decoration: none;
+    font-size: 14pt;
+    padding-bottom: 8px;
+    color: #333;
+}
+
+li > a + div {
+    padding: 5px;
+    font-size: 8pt;
+}
+
+.github svg {
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+#sort {
+    margin-top: 20px;
+    color: lightgray;
+    text-align: center;
+}
+
+#sort .active {
+    font-weight: bold;
+}
+
+select {
+    border: 0;
+    outline: none;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+}
