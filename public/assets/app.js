@@ -87,7 +87,7 @@ new Vue({
                     return a.name.localeCompare(b.name);
                 }
                 return 0;
-            })
+            });
         }
     },
     filters: {
